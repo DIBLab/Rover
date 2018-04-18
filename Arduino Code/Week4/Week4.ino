@@ -1,7 +1,3 @@
-//Week 3:
-//Create functions for forward, backward, left, right, and stop
-//Use functions in the loop to drive the robot
-
 //Week 4:
 //Create inputs for functions to have variable drive times
 //Begin designing maze
@@ -23,36 +19,41 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
- forward();
- left();
- forward();
+ forward(100);
+ left(50);
+ forward(200);
 }
 
 //write functions for forward, backward, left, right, and stop
 //Remember: motors are mounted in opposite directions!
-void forward(){
+void forward(int t){
   leftServo.write(120);
   rightServo.write(60);
+  delay(t);
 }
 
-void backward(){
+void backward(int t){
   leftServo.write(60);
   rightServo.write(120);
+  delay(t);
 }
 
-void left(){
+void left(int t){
   leftServo.write(120);
   rightServo.write(120);
+  delay(t);
 }
 
-void right(){
+void right(int t){
   leftServo.write(60);
   rightServo.write(60);
+  delay(t);
 }
 
 //stop is a reserved word - use a different name like hold instead
-void hold(){
+void hold(int t){
   leftServo.write(90);
   rightServo.write(90);
+  delay(t);
 }
 
